@@ -19,7 +19,7 @@ import {
 } from '../contants';
 
 
-export function createUser ({ id, token, data }) {
+export function createUser ({ id, token, user }) {
   const request = query({
     url   : API_URL,
     auth : { id, token },
@@ -49,7 +49,7 @@ export function createUser ({ id, token, data }) {
         username
       }
     }`,
-    variables: JSON.stringify(data)
+    variables: JSON.stringify(user)
   });
 
   return {
@@ -160,18 +160,18 @@ export function setUser (user) {
 }
 
 
-export function updateUser ({ id, token, user, data }) {
+export function updateUser ({ id, token, user }) {
   const request = query({
     url   : API_URL,
     auth : { id, token },
-    query:`mutation updateUser (
+    query:`mutation userUpdate (
       $id       : String,
       $email    : String,
       $firstName: String,
       $lastName : String,
       $username : String
     ) {
-      updateUser (
+      userUpdate (
         id       : $id,
         email    : $email,
         firstName: $firstName,
@@ -190,7 +190,7 @@ export function updateUser ({ id, token, user, data }) {
         username
       }
     }`,
-    variables: JSON.stringify(data)
+    variables: JSON.stringify(user)
   });
 
   return {

@@ -32,7 +32,7 @@ const FormReduxInput = field => {
     button={button}
     context={context}
     disabled={disabled}
-    help={meta.touched && meta.error ? { ...help, text: meta.error } :  null}
+    help={meta.touched && meta.error ? { ...help, text: meta.error, context: 'danger' } :  null}
     icon={icon}
     options={options}
     Password={Password}

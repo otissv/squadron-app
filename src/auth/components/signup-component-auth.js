@@ -1,10 +1,14 @@
 import React from 'react';
 import AuthForm from './form-component-auth';
-
+import autobind from 'class-autobind';
 
 export default class Signup extends React.Component  {
+  constructor() {
+    super(...arguments);
+    autobind(this);
+  }
 
-  onSubmit (props) {
+  handleSubmit (props) {
     const { register, setStorage, loggedIn } = this.props;
 
     register(props).payload
@@ -26,7 +30,7 @@ export default class Signup extends React.Component  {
     const { handleSubmit } = this.props;
 
     return <AuthForm
-      onSubmit={handleSubmit(this.onSubmit.bind(this))}
+      onSubmit={handleSubmit(this.handleSubmit)}
       {...this.props}
       heading='Sing up'
       />;

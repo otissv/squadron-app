@@ -5,18 +5,20 @@ import {
 } from '../../contants';
 import { Link } from 'react-router';
 import deleteUser from './delete-component-user';
+import autobind from 'class-autobind';
 
 
 export default class User extends React.Component {
-  constructor (props) {
-    super(props);
-
-    this.handleDelete = this.handleDelete.bind(this);
+  constructor() {
+    super(...arguments);
+    autobind(this);
   }
+
 
   handleDelete(e) {
     deleteUser(this.props);
   }
+
 
   render () {
     const { user, selectedUser } = this.props;
@@ -43,8 +45,8 @@ export default class User extends React.Component {
       <a href='#' onClick={this.handleDelete}>Detele</a>
     </div>;
   }
-
 }
+
 
 User.propTypes = {
   user        : React.PropTypes.object.isRequired,

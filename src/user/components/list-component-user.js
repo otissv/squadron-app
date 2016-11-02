@@ -5,13 +5,13 @@ import {
   USERS_ROUTE,
   USER_NEW_ROUTE
 } from '../../contants';
+import autobind from 'class-autobind';
 
 
 export default class Users extends React.Component {
-  constructor (props) {
-    super(props);
-
-    this.handleSetUser =  this.handleSetUser.bind(this);
+  constructor() {
+    super(...arguments);
+    autobind(this);
   }
 
 

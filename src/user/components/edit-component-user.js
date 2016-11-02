@@ -1,14 +1,13 @@
 import React from 'react';
-import AuthForm from './form-component-user';
-
+import UserForm from './form-component-user';
+import autobind from 'class-autobind';
 
 export default class EditUser extends React.Component  {
-  constructor (props) {
-    super(props);
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+  constructor() {
+    super(...arguments);
+    autobind(this);
   }
+
 
   handleSubmit (user) {
     const {
@@ -19,7 +18,7 @@ export default class EditUser extends React.Component  {
     } = this.props;
 
     const { id, token } =  storage;
-
+console.log(user);
     updateUser({ id, token, user }).payload
       .then(response => {
         redirectTo(`/users/${selectedUser}`);
@@ -33,7 +32,7 @@ export default class EditUser extends React.Component  {
 
   render () {
     const { handleSubmit } = this.props;
-    return <AuthForm
+    return <UserForm
       onSubmit={handleSubmit(this.handleSubmit)}
       {...this.props}
       heading='Edit User'

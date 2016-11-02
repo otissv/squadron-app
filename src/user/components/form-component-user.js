@@ -10,10 +10,7 @@ import { USERS_ROUTE } from '../../contants';
 export default class UserForm extends React.Component {
   componentWillMount() {
     const { initialize, user } = this.props;
-
-    if (initialize && user) {
-      initialize(user);
-    }
+    initialize && user && initialize(user);
   }
 
 
@@ -70,7 +67,7 @@ export default class UserForm extends React.Component {
         label='Date of Birth'
         icon='calendar'
         type='date'
-        help={{type: 'block'}}
+        help={{type: 'block', context: 'danger'}}
       />
 
       <Button type='submit' context='primary' margin='right top'>

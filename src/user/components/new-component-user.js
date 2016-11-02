@@ -1,17 +1,17 @@
 import React from 'react';
 import UserForm from './form-component-user';
 import { USERS_ROUTE } from '../../contants';
+import autobind from 'class-autobind';
 
 
 export default class NewUser extends React.Component  {
-  constructor (props) {
-    super(props);
-
-    this.handleChange = this.handleChange.bind(this);
-    // this.handleSubmit = this.handleSubmit.bind(this);
+  constructor() {
+    super(...arguments);
+    autobind(this);
   }
 
-  onSubmit (data) {
+  handleSubmit (user) {
+    console.log('NewUser onSubmit');
     const {
       storage,
       redirectTo,
@@ -20,7 +20,7 @@ export default class NewUser extends React.Component  {
 
     const { id, token } =  storage;
 
-    createUser({ id, token, data }).payload
+    createUser({ id, token, user }).payload
       .then(response => {
         console.log(response);
         redirectTo(USERS_ROUTE);
@@ -37,8 +37,9 @@ export default class NewUser extends React.Component  {
 
   render () {
     const { handleSubmit } = this.props;
+    console.log();
     return <UserForm
-      onSubmit={handleSubmit(this.onSubmit.bind(this))}
+      onSubmit={handleSubmit(this.handleSubmit)}
       {...this.props} user={{}}
       heading='New User'
     />;
