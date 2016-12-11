@@ -4,7 +4,7 @@ import * as user from './user/action-user';
 
 
 export default {
-	...app,
+  ...app,
   ...auth,
   ...user
 };

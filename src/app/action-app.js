@@ -9,7 +9,7 @@ import {
   DELETE_STORAGE,
   LOCATION,
   SET_STORAGE
-} from '../contants';
+} from '../constants/actions-constants';
 
 
 export function redirectTo (path) {

@@ -4,7 +4,7 @@ import {
   SET_USERS,
   SET_USER,
   UPDATE_USER
-} from '../contants';
+} from '../constants/actions-constants';
 
 const INITAL_STATE = {
   selectedUser: null,
@@ -12,7 +12,7 @@ const INITAL_STATE = {
   user: {}
 };
 
-export default function applicationReducer(state = INITAL_STATE, action) {
+export default function applicationReducer (state = INITAL_STATE, action) {
   switch (action.type) {
     case REMOVE_USER_FROM_LIST:
       return {...state, usersAll: action.payload};

@@ -1,11 +1,17 @@
 import React from 'react';
+import autobind from 'class-autobind';
 import { connect } from 'react-redux';
 import actions from '../../actions';
 import { mapStateToProps } from '../../reducers';
-import Users from '../components/view-component-user';
+import DeleteUser from '../components/Delete-user';
+
+class UserContainer extends React.Component {
+  constructor () {
+    super(...arguments);
+    autobind(this);
+  }
 
 
-class UserContainer extends React.Component{
   componentWillMount () {
     const {
       getUser,
@@ -17,12 +23,24 @@ class UserContainer extends React.Component{
 
     getUser({ id, token, user: selectedUser }).payload
       .then(response => {
+        console.log(response);
         setUser(response.data);
       });
   }
 
+
+  handleDelete (e) {
+    DeleteUser(this.props);
+  }
+
+
   render () {
-    return <Users {...this.props}/>;
+    const Component = this.props.component;
+
+    return <Component
+      {...this.props}
+      handleDelete={this.handleDelete}
+    />;
   }
 }
 

@@ -1,11 +1,21 @@
 import React from 'react';
+import autobind from 'class-autobind';
 import { connect } from 'react-redux';
 import actions from '../../actions';
 import { mapStateToProps } from '../../reducers';
-import Users from '../components/list-component-user';
 
+class UsersContainer extends React.Component {
+  constructor () {
+    super(...arguments);
+    autobind(this);
+  }
 
-class UsersContainer extends React.Component{
+  handleSetUser (e) {
+    const memId = e.target.dataset.memid;
+
+    this.props.selectUser(memId);
+  }
+
   componentWillMount () {
     const {
       getUsers,
@@ -13,7 +23,7 @@ class UsersContainer extends React.Component{
       storage } = this.props;
 
     const { id, token } = storage;
-    
+
     getUsers({ id, token }).payload
       .then(response => {
         setUsers(response.data);
@@ -21,7 +31,12 @@ class UsersContainer extends React.Component{
   }
 
   render () {
-    return <Users {...this.props} />;
+    const Component = this.props.component;
+
+    return <Component
+      {...this.props}
+      handleSetUser={this.handleSetUser}
+    />;
   }
 }
 

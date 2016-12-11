@@ -1,13 +1,12 @@
 import axios from 'axios';
-import { query, mutation } from '../helpers/asyc-query.js';
+import { query } from '../helpers/asyc-query.js';
 
 import {
   arrayToObject,
-  deleteKeyToArray,
+  deleteKeyToArray
 } from '../helpers';
 
 import {
-  API_URL,
   REMOVE_USER,
   REMOVE_USER_FROM_LIST,
   GET_USER,
@@ -16,12 +15,15 @@ import {
   SET_USER,
   SET_USERS,
   UPDATE_USER
-} from '../contants';
+} from '../constants/actions-constants';
 
+import {
+  API_ROUTE
+} from '../constants/routes-constants';
 
 export function createUser ({ id, token, user }) {
   const request = query({
-    url   : API_URL,
+    url   : API_ROUTE,
     auth : { id, token },
     query:`mutation userCreate (
       $id       : String,
@@ -59,7 +61,7 @@ export function createUser ({ id, token, user }) {
 }
 
 export function removeUser ({ id, token, user }) {
-  const request = axios.delete(`${API_URL}users/${user}/${query(id, token)}`);
+  const request = axios.delete(`${API_ROUTE}users/${user}/${query(id, token)}`);
 
   return {
     type: REMOVE_USER,
@@ -70,10 +72,10 @@ export function removeUser ({ id, token, user }) {
 
 export function getUsers ({ id, token }) {
   const request = query({
-    url  : API_URL,
+    url  : API_ROUTE,
     auth : { id, token },
     query:`query userFindAll {
-      userFindAll  {
+      userFindAll {
         id
         created
         dateOfBirth
@@ -81,6 +83,8 @@ export function getUsers ({ id, token }) {
         firstName
         lastLogin
         lastName
+        online
+        roles
         telephone
         updated
         username
@@ -106,7 +110,7 @@ export function setUsers (users) {
 
 export function getUser ({ id, token, user }) {
   const request = query({
-    url   : API_URL,
+    url   : API_ROUTE,
     auth : { id, token },
     query:`query userFindById ($id: String) {
       userFindById (id: $id)  {
@@ -117,6 +121,8 @@ export function getUser ({ id, token, user }) {
         firstName
         lastLogin
         lastName
+        online
+        roles
         telephone
         updated
         username
@@ -129,7 +135,9 @@ export function getUser ({ id, token, user }) {
 
   return {
     type: GET_USER,
-    payload: request.then(response => response)
+    payload: request.then(response => {
+      return response;
+    })
   };
 }
 
@@ -162,7 +170,7 @@ export function setUser (user) {
 
 export function updateUser ({ id, token, user }) {
   const request = query({
-    url   : API_URL,
+    url   : API_ROUTE,
     auth : { id, token },
     query:`mutation userUpdate (
       $id       : String,

@@ -3,7 +3,7 @@ import {
   DELETE_STORAGE,
   GET_STORAGE,
   SET_STORAGE
-} from '../contants';
+} from '../constants/actions-constants.js';
 
 
 const INITAL_STATE = {

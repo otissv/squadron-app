@@ -1,17 +1,19 @@
 import { query } from '../helpers/asyc-query.js';
 
 import {
-  AUTH_URL,
   AUTHENTICATE,
   REGISTER,
   UNAUTHENTICATE
-} from '../contants';
+} from '../constants/actions-constants';
 
+import {
+  AUTH_ROUTE
+} from '../constants/routes-constants';
 
 export function authenticate (user) {
 
   const request = query({
-    url   : AUTH_URL,
+    url   : AUTH_ROUTE,
     action: 'authenticate',
     query : `query authenticate ($username: String, $password: String) {
       authenticate (username: $username, password: $password) {
@@ -33,7 +35,7 @@ export function authenticate (user) {
 
 export function register (user) {
   const request = query({
-    url   : AUTH_URL,
+    url   : AUTH_ROUTE,
     query : `mutation register ($username: String, $password: String) {
       register (username: $username,password: $password) {
         id
@@ -55,7 +57,7 @@ export function register (user) {
 
 export function unauthenticate (id) {
   const request = query({
-    url   : AUTH_URL,
+    url   : AUTH_ROUTE,
     query : `mutation unauthenticate (
       $id: String
     ) {

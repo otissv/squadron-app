@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import actions from '../../actions';
 import { mapStateToProps } from '../../reducers';
 
-export default function(ComposedClass, redirect) {
+export default function (ComposedClass, redirect) {
 
   class Authuthoried extends React.Component {
     constructor (props) {

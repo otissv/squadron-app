@@ -78,9 +78,17 @@ ansi-html@0.0.5:
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/ansi-html/-/ansi-html-0.0.5.tgz#0dcaa5a081206866bc240a3b773a184ea3b88b64"
 
+ansi-regex@^0.2.0, ansi-regex@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-0.2.1.tgz#0d8e946967a3d8143f93e24e298525fc1b2235f9"
+
 ansi-regex@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-2.0.0.tgz#c5061b6e0ef8a81775e50f5d66151bf6bf371107"
+
+ansi-styles@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/ansi-styles/-/ansi-styles-1.1.0.tgz#eaecbf66cd706882760b2f4691582b8f55d7a7de"
 
 ansi-styles@^2.2.1:
   version "2.2.1"
@@ -225,6 +233,15 @@ autoprefixer@6.4.1:
     num2fraction "^1.2.2"
     postcss "^5.1.2"
     postcss-value-parser "^3.2.3"
+
+ava@0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/ava/-/ava-0.0.4.tgz#45fc22954d60b47fe47cd6cce5de2e8bf33bc824"
+  dependencies:
+    chalk "^0.5.1"
+    each-async "^1.0.0"
+    log-symbols "^1.0.0"
+    minimist "^1.1.0"
 
 aws-sign2@~0.6.0:
   version "0.6.0"
@@ -1103,6 +1120,16 @@ center-align@^0.1.1:
     align-text "^0.1.3"
     lazy-cache "^1.0.3"
 
+chalk@^0.5.1:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/chalk/-/chalk-0.5.1.tgz#663b3a648b68b55d04690d49167aa837858f2174"
+  dependencies:
+    ansi-styles "^1.1.0"
+    escape-string-regexp "^1.0.0"
+    has-ansi "^0.1.0"
+    strip-ansi "^0.3.0"
+    supports-color "^0.2.0"
+
 chalk@^1.0.0, chalk@^1.1.0, chalk@^1.1.1, chalk@^1.1.3, chalk@1.1.3:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-1.1.3.tgz#a8115c55e4a702fe4d150abd3872822a7e09fc98"
@@ -1693,6 +1720,13 @@ duplexer@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/duplexer/-/duplexer-0.1.1.tgz#ace6ff808c1ce66b57d1ebf97977acb02334cfc1"
 
+each-async@^1.0.0:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/each-async/-/each-async-1.1.1.tgz#dee5229bdf0ab6ba2012a395e1b869abf8813473"
+  dependencies:
+    onetime "^1.0.0"
+    set-immediate-shim "^1.0.0"
+
 ecc-jsbn@~0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/ecc-jsbn/-/ecc-jsbn-0.1.1.tgz#0fc73a9ed5f0d53c38193398523ef7e543777505"
@@ -1801,7 +1835,7 @@ escape-html@~1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/escape-html/-/escape-html-1.0.3.tgz#0258eae4d3d0c0974de1c169188ef0051d1d1988"
 
-escape-string-regexp@^1.0.2, escape-string-regexp@^1.0.5, escape-string-regexp@1.0.5:
+escape-string-regexp@^1.0.0, escape-string-regexp@^1.0.2, escape-string-regexp@^1.0.5, escape-string-regexp@1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
 
@@ -2386,6 +2420,12 @@ har-validator@~2.0.6:
     commander "^2.9.0"
     is-my-json-valid "^2.12.4"
     pinkie-promise "^2.0.0"
+
+has-ansi@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/has-ansi/-/has-ansi-0.1.0.tgz#84f265aae8c0e6a88a12d7022894b7568894c62e"
+  dependencies:
+    ansi-regex "^0.2.0"
 
 has-ansi@^2.0.0:
   version "2.0.0"
@@ -3418,6 +3458,12 @@ lodash@^4.0.0, lodash@^4.12.0, lodash@^4.13.1, lodash@^4.14.2, lodash@^4.15.0, l
   version "4.16.6"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.16.6.tgz#d22c9ac660288f3843e16ba7d2b5d06cca27d777"
 
+log-symbols@^1.0.0:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/log-symbols/-/log-symbols-1.0.2.tgz#376ff7b58ea3086a0f09facc74617eca501e1a18"
+  dependencies:
+    chalk "^1.0.0"
+
 longest@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/longest/-/longest-1.0.1.tgz#30a0b2da38f73770e8294a0d22e6625ed77d0097"
@@ -3556,7 +3602,7 @@ minimatch@3.0.2:
   dependencies:
     brace-expansion "^1.0.0"
 
-minimist@^1.1.1, minimist@^1.2.0:
+minimist@^1.1.0, minimist@^1.1.1, minimist@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.0.tgz#a35008b20f41383eec1fb914f4cd5df79a264284"
 
@@ -3574,9 +3620,9 @@ mkdirp@^0.5.0, mkdirp@^0.5.1, "mkdirp@>=0.5 0", mkdirp@~0.5.0, mkdirp@~0.5.1, mk
   dependencies:
     minimist "0.0.8"
 
-moment@^2.14.1:
-  version "2.15.2"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.15.2.tgz#1bfdedf6a6e345f322fe956d5df5bd08a8ce84dc"
+moment:
+  version "2.16.0"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.16.0.tgz#f38f2c97c9889b0ee18fc6cc392e1e443ad2da8e"
 
 ms@0.7.1:
   version "0.7.1"
@@ -4462,6 +4508,10 @@ react-scripts@0.6.1:
   optionalDependencies:
     fsevents "1.0.14"
 
+react-tagsinput:
+  version "3.13.6"
+  resolved "https://registry.yarnpkg.com/react-tagsinput/-/react-tagsinput-3.13.6.tgz#1a884c138fb19eca51f04aaa608a46339ef382af"
+
 react-uikit-alert@^2.0.0:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/react-uikit-alert/-/react-uikit-alert-2.0.2.tgz#3a703f80b98bf7ad58dda8afe8f8a116d7e23eb6"
@@ -4481,7 +4531,7 @@ react-uikit-base@^2.0.0, react-uikit-base@~2.0.2:
     react-dom "~15.3.2"
     ufunc "~2.0.1"
 
-react-uikit-button@^2.0.0:
+react-uikit-button:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/react-uikit-button/-/react-uikit-button-2.0.2.tgz#96967dc67cbe07f01a510ff7c15e4a8ba07c77a7"
   dependencies:
@@ -4502,6 +4552,16 @@ react-uikit-form@^2.0.0:
     react-uikit-icons "~2.0.3"
     ufunc "~2.0.1"
 
+react-uikit-grid:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/react-uikit-grid/-/react-uikit-grid-2.0.3.tgz#3747d8d7de83a1a8edb5624eb5b92fc16856d2e1"
+  dependencies:
+    cuid "~1.3.8"
+    react "~15.3.2"
+    react-dom "~15.3.2"
+    react-uikit-base "~2.0.2"
+    ufunc "~2.0.1"
+
 react-uikit-icons@^2.0.2, react-uikit-icons@~2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/react-uikit-icons/-/react-uikit-icons-2.0.3.tgz#d323ba154f523061b8d5f5e6093c7fe031558e54"
@@ -4510,6 +4570,27 @@ react-uikit-icons@^2.0.2, react-uikit-icons@~2.0.3:
     react "~15.3.2"
     react-dom "~15.3.2"
     react-uikit-base "~2.0.2"
+    ufunc "~2.0.1"
+
+react-uikit-nav:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/react-uikit-nav/-/react-uikit-nav-2.0.2.tgz#95446aa2a5be5c40951128e372664f7f8f5a9a49"
+  dependencies:
+    cuid "~1.3.8"
+    react "~15.3.2"
+    react-dom "~15.3.2"
+    react-uikit-base "~2.0.2"
+    ufunc "~2.0.1"
+
+react-uikit-table:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/react-uikit-table/-/react-uikit-table-2.0.1.tgz#08a7eca3a23596d70005faea30d9d7450fa4dc96"
+  dependencies:
+    cuid "~1.3.8"
+    react "~15.3.2"
+    react-dom "~15.3.2"
+    react-uikit-base "~2.0.2"
+    sort-it "~0.2.0"
     ufunc "~2.0.1"
 
 react@^15.3.2, react@~15.3.2:
@@ -4584,6 +4665,10 @@ readdirp@^2.0.0:
     minimatch "^3.0.2"
     readable-stream "^2.0.2"
     set-immediate-shim "^1.0.1"
+
+readline:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/readline/-/readline-1.3.0.tgz#c580d77ef2cfc8752b132498060dc9793a7ac01c"
 
 readline2@^1.0.1:
   version "1.0.1"
@@ -4916,7 +5001,7 @@ set-blocking@^2.0.0, set-blocking@~2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/set-blocking/-/set-blocking-2.0.0.tgz#045f9782d011ae9a6803ddd382b24392b3d890f7"
 
-set-immediate-shim@^1.0.1:
+set-immediate-shim@^1.0.0, set-immediate-shim@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/set-immediate-shim/-/set-immediate-shim-1.0.1.tgz#4b2b1b27eb808a9f8dcc481a58e5e56f599f3f61"
 
@@ -4998,6 +5083,12 @@ sockjs@^0.3.15:
   dependencies:
     faye-websocket "^0.10.0"
     uuid "^2.0.2"
+
+sort-it@~0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/sort-it/-/sort-it-0.2.0.tgz#59f808c767636a32cd2f31bf36fa43af040c39bd"
+  dependencies:
+    ava "0.0.4"
 
 sort-keys@^1.0.0:
   version "1.1.2"
@@ -5114,6 +5205,12 @@ stringstream@~0.0.4:
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/stringstream/-/stringstream-0.0.5.tgz#4e484cd4de5a0bbbee18e46307710a8a81621878"
 
+strip-ansi@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-0.3.0.tgz#25f48ea22ca79187f3174a4db8759347bb126220"
+  dependencies:
+    ansi-regex "^0.2.1"
+
 strip-ansi@^3.0.0, strip-ansi@^3.0.1, strip-ansi@3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-3.0.1.tgz#6a385fb8853d952d5ff05d0e8aaf94278dc63dcf"
@@ -5139,6 +5236,10 @@ style-loader@0.13.1:
   resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-0.13.1.tgz#468280efbc0473023cd3a6cd56e33b5a1d7fc3a9"
   dependencies:
     loader-utils "^0.2.7"
+
+supports-color@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-0.2.0.tgz#d92de2694eb3f67323973d7ae3d8b55b4c22190a"
 
 supports-color@^2.0.0:
   version "2.0.0"

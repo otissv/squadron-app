@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import './vendor/uikit/css/uikit.min.css';
-
+import './index.css';
 
 import { Router, browserHistory } from 'react-router';
 import { Provider } from 'react-redux';

@@ -4,9 +4,9 @@ import empty from 'is-empty';
 
 
 // get the field name from the query
-function field (str) {
-  return str.trim().split(/[\{ ]/)[1];
-}
+// function field (str) {
+//   return str.trim().split(/[\{ ]/)[1];
+// }
 
 
 // make ajax request to graphql server
